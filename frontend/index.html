@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, minimum-scale=1.0, maximum-scale = 1.0, initial-scale=1, user-scalable = no">
+    <title>Kim Chhi</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="icon" href="/img/favicon.ico">
+    <link rel="apple-touch-icon" href="/img/s_logo_bg.png">
+    <link rel="manifest" href="/manifest.json">
+
+    <meta property="og:title" content="Kim Chhi">
+    <meta property="og:url" content="https://kimchhi.herokuapp.com/">
+    <meta property="og:type" content="salon">
+    <meta property="og:image" content="https://kimchhi.herokuapp.com/img/ogimg.png">
+    <meta property="og:description" content="">
+
+
+</head>
+
+<body>
+
+    <!-- Loading -->
+    <div class="loading" id="loading">
+        <div class="loader">Loading...</div>
+    </div>
+
+    <div class="detailsTransitions" id="detailsTransitions" style="display: none;">
+        <div class="detailsCard">
+            <div class="close" onclick="showDetailsTransitions('')">
+                <div id="close1" class="closes"></div>
+                <div id="close2" class="closes"></div>
+            </div>
+            <div class="title">Details</div>
+            <div class="body">
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>&nbsp;&nbsp;:&nbsp;&nbsp;</th>
+                        <td id="DTId">Error</td>
+                    </tr>
+                    <tr>
+                        <th>Name</th>
+                        <th>&nbsp;&nbsp;:&nbsp;&nbsp;</th>
+                        <td id="DTName">Error</td>
+                    </tr>
+                    <tr>
+                        <th>Price</th>
+                        <th>&nbsp;&nbsp;:&nbsp;&nbsp;</th>
+                        <td id="DTPrice">Error</td>
+                    </tr>
+                    <tr>
+                        <th>Fee</th>
+                        <th>&nbsp;&nbsp;:&nbsp;&nbsp;</th>
+                        <td id="DTFee">Error</td>
+                    </tr>
+                    <tr>
+                        <th>Staff</th>
+                        <th>&nbsp;&nbsp;:&nbsp;&nbsp;</th>
+                        <td id="DTStaff">Error</td>
+                    </tr>
+                    <tr>
+                        <th>Date</th>
+                        <th>&nbsp;&nbsp;:&nbsp;&nbsp;</th>
+                        <td id="DTDate">Error</td>
+                    </tr>
+                </table>
+
+            </div>
+            <div class="button"></div>
+
+        </div>
+    </div>
+
+    <button class="hamburger" id="btnBar" onclick="showBar()" style="display: none;">
+        <div id="bar1" class="bar"></div>
+        <div id="bar2" class="bar"></div>
+        <div id="bar3" class="bar"></div>
+    </button>
+
+    <div class="slideBar Sbar" id="slideBar" style="display: none;">
+        <div class="profile">
+            <div class="colorCover"></div>
+            <div class="imgProfile1">
+                <div class="imgProfile2">
+                    <img id="profile1" src="/img/profile.jpg">
+                </div>
+            </div>
+            <p id="name1" class="name"></p>
+            <p class="possession">បុគ្គលិក</p>
+        </div>
+        <hr>
+        <div class="nav">
+            <ul>
+                <li id="Ldashboard"><a href="/" class="nav__link" data-link>ផ្ទាំងគ្រប់គ្រង</a></li>
+                <li id="LaddMore"><a href="/addMore" data-link>បន្ថែម​ទៀត</a></li>
+                <li id="Labout"><a href="/aboutDev" data-link>អំពីអ្នកអភិវឌ្ឍន៍</a></li>
+                <!-- <li id="Labout"><a href="/onlyView" data-link>សម្រាប់តែមើល</a></li> -->
+                <li id="Lsignout"><a href="" onclick="signout()" data-link>ចាកចេញ</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="bgSlidebar" onclick="showBar()">
+
+    </div>
+
+    <div class="header" id="header" style="display: none;">
+        <div class="title">
+            <h3 id="title">Error</h3>
+        </div>
+        <div class="acc">
+            <div class="Gname">
+                <h3 id="name2" class="name">Unknow User</h3>
+                <h4 class="pos">បុគ្គលិក</h4>
+            </div>
+            <img id="profile2" src="/img/profile.jpg" alt="Profile User">
+        </div>
+    </div>
+
+
+
+    <div class="login" id="login" style="display: none;">
+        <img src="/img/login.png" class="imgLogin">
+        <h1>ចូល</h1>
+        <p class="msg" id="msg"></p>
+        <div class="inputBox">
+            <input id="username" type="text" required="required">
+            <span>ឈ្មោះ​អ្នកប្រើប្រាស់</span>
+        </div>
+        <div class="inputBox">
+            <input id="password" type="password" required="required">
+            <span>ពាក្យសម្ងាត់</span>
+        </div>
+
+
+        <div class="loginBtn">
+            <button class="buttonStyle" onclick="login()">ចូល</button>
+        </div>
+
+        <form action="/" method="post" style="display: none;">
+            <div class="inputText">
+                <p>ឈ្មោះ​អ្នកប្រើប្រាស់</p>
+                <input type="text">
+            </div>
+            <div class="inputText">
+                <p>ពាក្យសម្ងាត់</p>
+                <input type="text">
+            </div>
+            <div class="loginBtn">
+                <button class="buttonStyle">ចូល </button>
+            </div>
+        </form>
+    </div>
+
+    <div class="home" id="home" style="display: none;">
+    
+        <div class="income">
+            <div class="incomes">
+                <p>ប្រាក់សរុបសេវាកមុ្ម</p>
+                <p id="income">$ 0</p>
+            </div>
+            <img src="img/income.png">
+        </div>
+        <div class="profit">
+            <div class="profits">
+                <p>ប្រាក់ភាគរយ</p>
+                <p id="profit">$ 0</p>
+            </div>
+            <img src="img/profit.png">
+        </div>
+        <div class="allTransitions">
+            <p>ដំណើរទាំងអស់</p>
+            <!-- <hr> -->
+            <ul class="list-data" id="list-data"></ul>
+        </div>
+
+
+        <!-- <div class="allTransitions">
+            <p>ដំណើរទាំងអស់</p>
+            <hr>
+            <table id="dataAllTransitioons"></table>
+        </div> -->
+        <div class="copyLinkOnlyView" onclick='copyTextToClipboard("kimchhi.onrender.com/onlyView")'>
+            <img src="img/link.png">
+        </div>
+    </div>
+
+    <div class="addMore" id="addMore" style="display: none;">
+        <img src="/img/addMore.png" class="imgAddMore">
+        <h1>បន្ថែម​ទៀត</h1>
+
+        <div class="inputBox">
+            <input id="name" type="text" required="required">
+            <span>ឈ្មោះសេវាកម្ម</span>
+        </div>
+        <div class="inputBox">
+            <input id="price" type="number" required="required" pattern="[0-9]*" inputmode="numeric">
+            <span>តម្លៃសេវាកម្ម ($)</span>
+        </div>
+        <div class="inputBox">
+            <input id="staff" type="number" required="required" pattern="[0-9]*" inputmode="numeric">
+            <span>ចំនួនបុគ្គលិក</span>
+        </div>
+        <div class="inputBox">
+            <input id="nameStaff" type="text" required="required">
+            <span>ឈ្មោះបុគ្គលិក</span>
+        </div>
+        <div class="inputBox">
+            <input id="dates" class="date" type="date" required="required">
+            <span class="date">កាលបរិច្ឆេទ</span>
+        </div>
+
+        <div class="loginBtn">
+            <button class="buttonStyle" onclick="addmore()">បន្ថែមឥឡូវនេះ</button>
+        </div>
+
+
+    </div>
+
+    <div class="aboutDev" id="aboutDev" style="display: none;">
+        <div class="card">
+            <div class="profile">
+                <div class="colorCover"></div>
+                <div class="imgProfile1">
+                    <div class="imgProfile2">
+                        <img src="/img/s_logo_bg.png" alt="">
+                    </div>
+                </div>
+                <p class="name">LONG J.SEANG</p>
+                <p class="possession">Web Developer</p>
+                <br>
+                <p class="possession">My name is LONG J.SEANG.<br>I created this website for the purpose of learning and
+                    providing convenience to users.</p>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+<script src="/js/app.js"></script> <!-- type="module"-->
+<script src="/js/functions.js"></script>
+
+</html>
